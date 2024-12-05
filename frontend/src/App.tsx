@@ -15,6 +15,7 @@ import { DualRangeSlider } from './components/ui/range-slider';
 import MultipleTags from './components/MultipleTags';
 import MultipleIngredients from './components/MultipleIngredients';
 import { Option } from './components/ui/multiple-selector';
+import { Badge } from './components/ui/badge';
 
 interface Recipe {
   title: string;
@@ -24,6 +25,7 @@ interface Recipe {
 }
 
 interface RecipeDetails {
+  tags: string[];
   ingredients: { ingredient: string; quantity: string }[];
   instructions: string[]; // Stored as JSON string in the database
   title: string;
@@ -159,8 +161,16 @@ function App() {
               <DialogDescription>
                 Created by {selectedRecipe.author}. Cook time: {selectedRecipe.cooktime} mins
               </DialogDescription>
+              <div className="flex gap-4">
+                {selectedRecipe?.tags?.map((tag, index) => (
+                  <Badge key={index} className="">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
             </DialogHeader>
             <div className="mt-4">
+              
               <h3 className="text-lg font-semibold">Ingredients</h3>
               <ul className="list-disc list-inside">
                 {selectedRecipe?.ingredients?.map((ingredient, index) => (
