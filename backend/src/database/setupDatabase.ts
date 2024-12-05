@@ -60,4 +60,4 @@ db.exec(createTablesSQL, (err) => {
     db.close();
 });
 
-import './seedDatabase'; // Comment this line when not resetting the database
+//import './seedDatabase'; // Comment this line when not resetting the database
