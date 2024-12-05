@@ -1,5 +1,7 @@
 # Assignment 6 - Final project
 
+note: you can find the sqlite database in `backend/src/database/mydatabase.sqlite3`
+
 ## Materials 
 - Install [Node](https://nodejs.org/en)  
 
@@ -17,3 +19,4 @@
 - [Shadcn Expansion pack](https://shadcnui-expansions.typeart.cc/)
 - [React](https://react.dev/)
 - [Sqlite](https://www.sqlite.org/)
+
